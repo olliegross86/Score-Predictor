@@ -1,0 +1,25 @@
+﻿@model SportTypeModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>@ViewBag.Message</p>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <a href="@Url.Action("PremierLeague")" class="grow"> <img src=@Model.LeagueLogo[0] style="width:auto; height:100px;" /></a>
+                <p>@Model.LeagueName[0]</p>
+            </div>
+            <div class="col-sm">
+                <a href="@Url.Action("GallagherPremiership")" class="grow"> <img src=@Model.LeagueLogo[1] style="width:auto; height:100px;" /></a>
+                <p>@Model.LeagueName[1]</p>
+            </div>
+            <div class="col-sm">
+                <a href="@Url.Action("SixNations")" class="grow"> <img src=@Model.LeagueLogo[2] style="width:auto; height:100px;" /></a>
+                <p>@Model.LeagueName[2]</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model LeagueModel
+@{
+    ViewData["Title"] = "Six Nations";
+}
+<div class="text-center">
+    <h1>6 Nations</h1>
+    <br />
+    <div class="container">
+        <div class="row" style="display:inline-block;">
+            @{
+                for (int i = 0; i < @Model.DBTeams.Count; i++)
+                {
+                    {
+                        <form action="TeamStats" method="POST" id="form_id" class="grow" style="display:inline-block;">
+                            <input type="hidden" name="teamnumber" value="@i" ; />
+                            <input type="hidden" name="leagueId" value="9999" ; />
+                            <input type="image" name="teamnumber" onclick="submittheform()" value="@i" src="@Model.DBTeams[i].ToString().Split("*")[1]" height=100px; />
+                        </form>
+
+
+                    }
+                    <script>
+                            function submittheform() {
+                                document.forms['form_id'].submit();
+                            }
+                    </script>
+
+
+                }
+
+            }
+
+
+        </div>
+    </div>
+</div>
+
+
+
